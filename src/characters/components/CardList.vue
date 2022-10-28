@@ -5,7 +5,7 @@ import type { Character } from "../interfaces/character.interface";
 // import { useQuery } from "@tanstack/vue-query";
 // import type { Character } from "../interfaces/character.interface";
 interface Props {
-    characters: Character[]
+  characters: Character[];
 }
 const props = defineProps<Props>();
 

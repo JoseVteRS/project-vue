@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import { toRef } from "vue";
+import { useRouter } from "vue-router";
 import type { Character } from "../interfaces/character.interface";
 
 const props = defineProps<{ character: Character }>();
 const character = toRef(props, "character");
+
+const router = useRouter();
+const goTo = () => router.push(`by/${character.value.char_id}`);
 </script>
 <template>
-  <div class="character-card">
+  <div class="character-card" @click="goTo">
     <img :src="character.img" :alt="character.name" />
 
     <h3>{{ character.name }}</h3>
